@@ -14,4 +14,18 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BookStore.Memory\BookStore.Memory.csproj" />
+      <ProjectReference Include="..\BookStore\BookStore.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Pages\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    </ItemGroup>
+
 </Project>
