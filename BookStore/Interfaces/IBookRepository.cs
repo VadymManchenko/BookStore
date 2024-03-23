@@ -4,5 +4,7 @@ namespace BookStore.Interfaces;
 
 public interface IBookRepository
 {
-    Book[] GetAllByTitle(string title);
+    Book[] GetAllByIsbn(string isbn);
+    //Book[] GetAllByAuthor(string author);
+    Book[] GetAllByTitleOrAuthor(string titlePart);
 }
