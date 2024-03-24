@@ -1,4 +1,3 @@
-using BookStore.Interfaces;
 using BookStore.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +6,7 @@ namespace BookStore.Controllers;
 public class SearchController : Controller
 {
     private readonly BookService bookService;
+
     // GET
     public SearchController(BookService bookService)
     {

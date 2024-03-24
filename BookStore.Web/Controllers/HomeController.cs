@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using BookStore.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers;
 
