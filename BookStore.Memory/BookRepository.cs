@@ -15,14 +15,16 @@ public class BookRepository : IBookRepository
 
     public Book[] GetAllByIsbn(string isbn)
     {
-        throw new NotImplementedException();
+        return books.Where(book => book.Isbn == isbn).ToArray();
     }
 
     public Book[] GetAllByTitleOrAuthor(string titlePart)
     {
         return books.Where(
             book => book.Title
-                .Contains(titlePart, StringComparison.InvariantCultureIgnoreCase))
+                .Contains(titlePart, StringComparison.InvariantCultureIgnoreCase)
+                || book.Author
+                    .Contains(titlePart, StringComparison.InvariantCultureIgnoreCase))
             .ToArray();
     }
 }

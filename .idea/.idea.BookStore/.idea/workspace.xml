@@ -13,14 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1436ea69-0c76-451c-871e-dc39120f90e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BookStore/AssemblyProperties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BookStore/Services/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BookStore/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BookStore.Memory/BookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Memory/BookRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.Web/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.Web/Controllers/SearchController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore/Entities/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore/Entities/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BookStore/Interfaces/IBookRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BookStore/Interfaces/IBookRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +30,9 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/важне/навчання/Програмування/BookStore/BookStore.Web/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BookStore/Services/BookService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/domains/BookStore.Tests/BookServiceTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/domains/BookStore.Tests/BookTests.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -224,7 +219,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Create Book class" />
     <MESSAGE value="Add unversional files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add unversional files" />
+    <MESSAGE value="Change entity class, add UnitTest project" />
+    <MESSAGE value="Add tests for BookService class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests for BookService class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
