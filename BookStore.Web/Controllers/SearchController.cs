@@ -13,7 +13,7 @@ public class SearchController : Controller
         this.bookService = bookService;
     }
 
-    public IActionResult Index(string query)
+    public IActionResult Index(string? query)
     {
         var books = bookService.GetAllByQuery(query);
         return View(books);

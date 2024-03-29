@@ -1,5 +1,6 @@
 using BookStore.Interfaces;
 using BookStore.Memory;
+using BookStore.Services;
 
 namespace BookStore.Web;
 
@@ -15,7 +16,8 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllersWithViews();
-        services.AddSingleton<IBookRepository, BookRepository>();
+        services.AddSingleton<IBookRepository, BookRepository>()
+            .AddSingleton<BookService>();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

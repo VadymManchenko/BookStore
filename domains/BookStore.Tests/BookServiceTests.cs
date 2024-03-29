@@ -7,6 +7,8 @@ namespace BookStore.Tests;
 
 public class BookServiceTests
 {
+    const int IdOfIsbnSearch = 1;
+    const int IdOfAuthorSearch = 2;
     [Fact]
     public void GetAllByQuery_WithIsbn_CallsMethod()
     {
@@ -14,19 +16,19 @@ public class BookServiceTests
         bookRepositoryStub.Setup(
                 e => e.GetAllByIsbn(
                     It.IsAny<string>()))
-            .Returns(new[] { new Book(1, "", "", "") });
+            .Returns(new[] { new Book(IdOfIsbnSearch, "", "", "", 0m, "") });
 
         bookRepositoryStub.Setup(
                 e => e.GetAllByTitleOrAuthor(
                     It.IsAny<string>()))
-            .Returns(new[] { new Book(2, "", "", "") });
+            .Returns(new[] { new Book(IdOfAuthorSearch, "", "", "", 0m, "") });
 
         var bookService = new BookService(bookRepositoryStub.Object);
 
         var actual = bookService.GetAllByQuery("ISBN 124-124-643 3");
         
         Assert.Collection(actual, 
-            book => Assert.Equal(1, book.Id));
+            book => Assert.Equal(IdOfIsbnSearch, book.Id));
     }
     [Fact]
     public void GetAllByQuery_WithAuthor_CallsMethod()
@@ -35,18 +37,18 @@ public class BookServiceTests
         bookRepositoryStub.Setup(
                 e => e.GetAllByIsbn(
                     It.IsAny<string>()))
-            .Returns(new[] { new Book(1, "", "", "") });
+            .Returns(new[] { new Book(IdOfIsbnSearch, "", "", "", 0m, "") });
 
         bookRepositoryStub.Setup(
                 e => e.GetAllByTitleOrAuthor(
                     It.IsAny<string>()))
-            .Returns(new[] { new Book(2, "", "", "") });
+            .Returns(new[] { new Book(IdOfAuthorSearch, "", "", "",0m, "") });
 
         var bookService = new BookService(bookRepositoryStub.Object);
 
         var actual = bookService.GetAllByQuery("124-124-643 3");
         
         Assert.Collection(actual, 
-            book => Assert.Equal(2, book.Id));
+            book => Assert.Equal(IdOfAuthorSearch, book.Id));
     }
 }
