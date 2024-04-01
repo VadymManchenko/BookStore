@@ -24,6 +24,25 @@
             <input class="form-control me-sm-2 " type="search" name="query" placeholder="Search...">
             <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button>
         </form>
+        <span class="navbar-text m-lg-auto">
+            @{
+                Cart? cart;
+
+                if (!Context.Session.TryGetCart(out cart))
+                {
+                    cart = new Cart();
+                }
+
+                if (cart?.Items.Count == 0)
+                {
+                    @: Cart is empty!
+                }
+                else
+                {
+                    @: Items: @cart?.Items.Values.Sum() for sum @cart.Amount
+                }
+            }
+        </span>
     </nav>
 </header>
 <div class="container">
