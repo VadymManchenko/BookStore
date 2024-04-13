@@ -27,6 +27,7 @@ public class Startup
             }
         );
         services.AddSingleton<IBookRepository, BookRepository>()
+            .AddSingleton<IOrderRepository, OrderRepository>()
             .AddSingleton<BookService>();
 
         /*services.AddSingleton<Func<IDbConnection>>(serviceProvider => serviceProvider.GetService<IDbConnection>);

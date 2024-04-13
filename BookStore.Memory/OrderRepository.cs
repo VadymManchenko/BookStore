@@ -20,8 +20,5 @@ public class OrderRepository : IOrderRepository
         return _orders.Single(order => order.Id == id);
     }
 
-    public void Update(Order order)
-    {
-        throw new NotImplementedException();
-    }
+    public void Update(Order order) { }
 }
