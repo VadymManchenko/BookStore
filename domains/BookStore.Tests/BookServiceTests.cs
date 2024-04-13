@@ -27,8 +27,7 @@ public class BookServiceTests
 
         var actual = bookService.GetAllByQuery("ISBN 124-124-643 3");
         
-        Assert.Collection(actual, 
-            book => Assert.Equal(IdOfIsbnSearch, book.Id));
+        Assert.Collection(actual, book => Assert.Equal(IdOfIsbnSearch, book.Id));
     }
     [Fact]
     public void GetAllByQuery_WithAuthor_CallsMethod()
@@ -48,7 +47,6 @@ public class BookServiceTests
 
         var actual = bookService.GetAllByQuery("124-124-643 3");
         
-        Assert.Collection(actual, 
-            book => Assert.Equal(IdOfAuthorSearch, book.Id));
+        Assert.Collection(actual, book => Assert.Equal(IdOfAuthorSearch, book.Id));
     }
 }

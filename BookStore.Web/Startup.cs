@@ -1,3 +1,5 @@
+using System.Data;
+using System.Data.SqlClient;
 using BookStore.Interfaces;
 using BookStore.Memory;
 using BookStore.Services;
@@ -26,6 +28,12 @@ public class Startup
         );
         services.AddSingleton<IBookRepository, BookRepository>()
             .AddSingleton<BookService>();
+
+        /*services.AddSingleton<Func<IDbConnection>>(serviceProvider => serviceProvider.GetService<IDbConnection>);
+        
+        services.AddTransient<IDbConnection, SqlConnection>();
+
+        services.AddScoped<IDbConnection, SqlConnection>();*/
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

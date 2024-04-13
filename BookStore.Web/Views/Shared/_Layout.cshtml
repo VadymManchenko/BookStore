@@ -26,20 +26,13 @@
         </form>
         <span class="navbar-text m-lg-auto">
             @{
-                Cart? cart;
-
-                if (!Context.Session.TryGetCart(out cart))
+                if (Context.Session.TryGetCart(out Cart cart) && cart.TotalCount > 0)
                 {
-                    cart = new Cart();
-                }
-
-                if (cart?.Items.Count == 0)
-                {
-                    @: Cart is empty!
+                    <a href="">Total @cart.TotalCount items for @cart.TotalPrice dollars.</a>
                 }
                 else
                 {
-                    @: Items: @cart?.Items.Values.Sum() for sum @cart.Amount
+                    @: Cart is empty!
                 }
             }
         </span>
