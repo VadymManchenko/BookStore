@@ -9,26 +9,19 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/BookStore.Web.styles.css" asp-append-version="true"/>
 </head>
-<style>
-.form-inline {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-}
-</style>
 <body>
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Book Store</a>
         <form class="form-inline my-2 my-lg-0" action="@Url.Action("Index", "Search")" method="get">
-            <input class="form-control me-sm-2 " type="search" name="query" placeholder="Search...">
+            <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search...">
             <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Search</button>
         </form>
         <span class="navbar-text m-lg-auto">
             @{
                 if (Context.Session.TryGetCart(out Cart cart) && cart.TotalCount > 0)
                 {
-                    <a href="">Total @cart.TotalCount items for @cart.TotalPrice dollars.</a>
+                    <a href="@Url.Action("Index", "Order")">Total @cart.TotalCount items for @cart.TotalPrice dollars.</a>
                 }
                 else
                 {

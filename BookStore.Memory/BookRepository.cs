@@ -17,6 +17,15 @@ public class BookRepository : IBookRepository
     {
         return books.Single(book => book.Id == id);
     }
+
+    public Book[] GetAllByIds(IEnumerable<int> ids)
+    {
+        var foundBooks = from book in books
+            join bookId in ids on book.Id equals bookId
+            select book;
+        
+        return foundBooks.ToArray();
+    }
     
     public Book[] GetAllByIsbn(string isbn)
     {
