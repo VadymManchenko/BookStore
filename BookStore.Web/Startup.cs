@@ -1,7 +1,9 @@
 using System.Data;
 using System.Data.SqlClient;
+using BookStore.Contractors;
 using BookStore.Interfaces;
 using BookStore.Memory;
+using BookStore.Messages;
 using BookStore.Services;
 
 namespace BookStore.Web;
@@ -28,6 +30,8 @@ public class Startup
         );
         services.AddSingleton<IBookRepository, BookRepository>()
             .AddSingleton<IOrderRepository, OrderRepository>()
+            .AddSingleton<INotificationService, DebugNotificationService>()
+            .AddSingleton<IDeliveryService, PostamateDeliveryService>()
             .AddSingleton<BookService>();
 
         /*services.AddSingleton<Func<IDbConnection>>(serviceProvider => serviceProvider.GetService<IDbConnection>);

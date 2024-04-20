@@ -10,4 +10,6 @@ public class OrderModel
 
     public decimal TotalPrice { get; set; }
 
+    public Dictionary<string, string> Errors { get; set; } = new();
+
 }
