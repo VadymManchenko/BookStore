@@ -1,14 +1,14 @@
 @model DeliveryModel
 @{
-    ViewData["Title"] = "Способ доставки";
+    ViewData["Title"] = "DeliveryType";
 }
 
-<h1>Способ доставки</h1>
+<h1>DeliveryType</h1>
 
 <form action="@Url.Action("StartDelivery")" method="post">
     <input type="hidden" name="id" value="@Model.OrderId" />
     <div class="form-group">
-        <label for="code">Способ доставки:</label>
+        <label for="code">DeliveryType:</label>
         <select class="form-control" name="uniqueCode">
             @foreach (var method in Model.Methods)
             {
@@ -16,5 +16,5 @@
             }
         </select>
     </div>
-    <button type="submit" class="btn btn-success">Далее</button>
+    <button type="submit" class="btn btn-success">Next</button>
 </form>

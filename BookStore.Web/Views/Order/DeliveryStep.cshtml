@@ -7,7 +7,7 @@
     ViewData["Title"] = "Параметры доставки";
 }
 
-<h1>Параметры доставки</h1>
+<h1>Delivery details</h1>
 <form action="@Url.Action(nameof(OrderController.NextDelivery))" method="post">
     <input type="hidden" name="id" value="@Model.OrderId" />
     <input type="hidden" name="uniqueCode" value="@Model.UniqueCode" />
@@ -31,5 +31,5 @@
             </div>
         }
     }
-    <button type="submit" class="btn btn-success">Далее</button>
+    <button type="submit" class="btn btn-success">Next</button>
 </form>

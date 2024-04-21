@@ -141,7 +141,7 @@ public class OrderController : Controller
 
         if (!IsValidCellPhone(cellPhone))
         {
-            model.Errors["cellPhone"] = "Номер телефона не соответствует формату +79876543210";
+            model.Errors["cellPhone"] = "Номер телефона не соответствует формату +380638028210";
             return View("Index", model);
         }
 
@@ -165,7 +165,7 @@ public class OrderController : Controller
         cellPhone = cellPhone.Replace(" ", "")
             .Replace("-", "");
 
-        return Regex.IsMatch(cellPhone, @"^\+?\d{11}$");
+        return Regex.IsMatch(cellPhone, @"^\+?\d{12}$");
     }
     
     [HttpPost]
